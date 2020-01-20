@@ -1,0 +1,114 @@
+@import '../variables.scss';
+
+@keyframes arrow {
+  0%{
+    transform: translateX(-50%) translateY(0);
+  }
+  50%{
+    transform: translateX(-50%) translateY(-20%);
+  }
+  100%{
+    transform: translateX(-50%) translateY(0%);
+  }
+}
+
+.welcome-head{
+  min-height: 100vh;
+  padding: 100px 0 100px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: all 200ms ease;
+  &__paralax{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    left: 0;
+    right: 0;
+    background-image: url('/assets/About/about-bg-v2.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    z-index: 1;
+    // transition: all 700ms ease;
+  }
+  .container{
+    position: relative;
+    z-index: 2;
+  }
+  &__arr{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    z-index: 2;
+    cursor: pointer;
+    animation: arrow 1000ms ease-in-out infinite;
+    svg{
+      circle{
+        transition: all 300ms ease;
+      }
+      path{
+        transition: all 300ms ease;
+      }
+    }
+    &:hover{
+      svg{
+        circle{
+          stroke: $red;
+        }
+        path{
+          fill: $red;
+        }
+      }
+    }
+  }
+  &__item{
+    max-width: 540px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.2;
+  }
+  &__title{
+    color: $titleColor;
+    font-size: 44px;
+    margin: 0 0 23px;
+    font-weight: 300;
+  }
+  &__descr{
+    color: $subColor;
+    font-size: 30px;
+    font-weight: 300;
+  }
+  // @media screen and (min-width: 1700px){
+  //   padding: 260px 0 100px;
+  // }
+  @media screen and (max-width: 1024px){
+    padding: 100px 0 100px;
+    background-size: cover;
+    flex-direction: column;
+    justify-content: center;
+    &__title{
+      font-size: 34px;
+    }
+  }
+  @media screen and (max-width: 540px){
+    padding: 100px 0 100px;
+    &__title{
+      font-size: 20px;
+      margin: 0 0 10px;
+    }
+    &__descr{
+      font-size: 14px;
+    }
+    &__arr{
+      width: 30px;
+      height: 30px;
+      svg{
+        width: 100%;
+      }
+    }
+  }
+}

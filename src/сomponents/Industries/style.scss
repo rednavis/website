@@ -1,0 +1,92 @@
+@import '../variables.scss';
+
+.industries{
+  .sect-title{
+    margin: 0 0 50px;
+    text-align: left;
+  }
+  .container{
+    background-image: url('/assets/Solutions/Industries/moon.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+  }
+  &__box{
+    padding: 80px 0;
+  }
+  &__row{
+    display: flex;
+    max-width: 600px;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+    justify-content: space-between;
+  }
+  &__col{
+    width: 1 / 2 * 100%;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    &:nth-child(n + 3){
+      margin-top: 60px;
+    }
+  }
+  &__img{
+    margin-right: 14px;
+    img{
+      width: 43px;
+    }
+  }
+  &__title{
+    color: $descrColor;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+  }
+  @media screen and (max-width: 1080px){
+    padding: 60px 0;
+    background-image: url('/assets/Solutions/Industries/moon.png');
+    background-repeat: no-repeat;
+    background-position: right -200px center;
+    background-size: contain;
+    .container{
+      background-image: none;
+    }
+    &__box{
+      padding: 0;
+    }
+  }
+  @media screen and (max-width: 850px){
+    background-position: right -400px bottom;
+  }
+  @media screen and (max-width: 640px){
+    background-position: right -440px bottom;
+  }
+  @media screen and (max-width: 540px){
+    background-position: right -320px bottom;
+    padding: 30px 0;
+    .sect-title{
+      margin: 0 0 27px;
+    }
+    &__row{
+      margin: 0 -14px;
+    }
+    &__col{
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0 14px;
+      width: 1 / 2 * 100%;
+      &:nth-child(n + 3){
+        margin-top: 26px;
+      } 
+    }
+    &__img{
+      margin: 0;
+      img{
+        width: 31px;
+      }
+    }
+    &__title{
+      font-size: 12px;
+    }
+  }
+}

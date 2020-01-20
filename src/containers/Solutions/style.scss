@@ -1,0 +1,13 @@
+.solutions{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 110%;
+  right: 0;
+  background-image: url('/assets/About/block-bg.png');
+  z-index: 1;
+  &__content{
+    position: relative;
+    z-index: 2;
+  }
+}

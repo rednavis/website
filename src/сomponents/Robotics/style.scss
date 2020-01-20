@@ -1,0 +1,142 @@
+@import '../variables.scss';
+
+.robotics{
+  padding: 60px 0 120px;
+  &__title{
+    margin: 0 0 40px;
+    text-align: center;
+    img{
+      width: 245px;
+    }
+  }
+  .sect-descr{
+    text-align: center;
+    margin: 0 auto 40px;
+  }
+  .slider-img{
+    margin: 0 0 60px;
+    &__row{
+      display: flex;
+      margin: 0 -10px;
+      flex-wrap: wrap;
+    }
+    &__col{
+      padding: 0 10px;
+      width: 1 / 3 * 100%;
+    }
+    &__item{
+      height: 100%;
+      overflow: hidden;
+      img{
+        min-height: 100%;
+        min-width: 100%;
+      }
+    }
+  }
+  &-list{
+    &__row{
+      display: flex;
+      margin: 0 -32px;
+      flex-wrap: wrap;
+    }
+    &__col{
+      width: 1 / 3 * 100%;
+      padding: 0 32px;
+      display: flex;
+      align-items: flex-start;
+      &:nth-child(n + 4){
+        margin-top: 45px;
+      }
+    }
+    &__icon{
+      min-width: 46px;
+      margin-right: 15px;
+      img{
+        width: 100%
+      }
+    }
+    &__text{
+      line-height: 22px;
+      color: $descrColor
+    }
+  }
+  @media screen and (max-width: 1300px){
+    &-list{
+      &__row{
+        margin: 0 -25px;
+      }
+      &__col{
+        padding: 0 25px;
+      }
+    }
+  }
+  @media screen and (max-width: 1024px){
+    .slider-img{
+      &__row{
+        justify-content: center;
+      }
+      &__col{
+        width: 1 / 2 * 100%;
+        &:nth-child(n + 3){
+          margin: 20px 0 0;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 768px){
+    padding: 30px 0 60px;
+    &__title{
+      margin: 0 0 20px;
+      line-height: 0;
+      img{
+        width: 90px;
+      }
+    }
+    .sect-descr{
+      margin-bottom: 20px;
+    }
+    &-list{
+      &__col{
+        width:  1 / 2 * 100%;
+        &:nth-child(n + 3){
+          margin-top: 20px;
+        }
+      }
+      &__icon{
+        min-width: 31px;
+        width: 31px;
+        max-height: 31px;
+      }
+      &__text{
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+    .slider-img{
+      margin: 0 0 45px;
+      &__col{
+        max-height: 170px;
+      }
+      &__item{
+        img{
+          max-width: 100%;
+        }
+      } 
+    }
+  }
+  @media screen and (max-width: 540px){
+    &-list{
+      &__row{
+        margin: 0 -10px;
+      }
+      &__col{
+        padding: 0 10px;
+        width: 100%;
+        align-items: center;
+        &:nth-child(n + 2){
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}

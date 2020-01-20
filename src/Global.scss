@@ -1,0 +1,98 @@
+@import './сomponents/variables.scss';
+
+@keyframes section{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+#root{
+  position: relative;
+}
+*{
+  box-sizing: border-box;
+  user-select: none;
+}
+body{
+  min-width: 320px;
+  font-family: $font;
+  background-color: $blockBg;
+  font-size: 16px;
+}
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+h1,h2,h3,h4,h5,h6,p{
+  margin: 0;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+.container{
+  max-width: 1190px;
+  padding: 0 25px;
+  margin: 0 auto;
+}
+.sect-title{
+  font-size: 44px;
+  line-height: 1.15;
+  color: $titleColor;
+  font-weight: 300;
+  margin: 0 0 35px;
+  text-align: center;
+  @media screen and (max-width: 1024px){
+    font-size: 34px;
+  }
+  @media screen and (max-width: 540px){
+    font-size: 20px;
+    margin: 0 0 30px;
+  }
+}
+.sect-descr{
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 300;
+  color: $subColor;
+  margin: 0 auto 25px;
+  max-width: 720px;
+  @media screen and (max-width: 768px){
+    font-size: 14px;
+    margin: 0 0 30px;
+  }
+}
+.sect-animation{
+  opacity: 0;
+  animation: section 500ms ease 200ms forwards;
+}
+.btn{
+  display: inline-block;
+  background-color: transparent;
+  text-transform: uppercase;
+  color: $titleColor;
+  padding: 16px 18px;
+  font-size: 14px;
+  line-height: 1.13;
+  white-space: nowrap;
+  border: 1px solid $titleColor;
+  cursor: pointer;
+  transition: background-color 300ms, border-color 300ms;
+  &:hover{
+    border-color: $red;
+    background-color: $red;
+  }
+  &-cont{
+    text-align: center;
+  }
+  @media screen and (max-width: 768px){
+    padding: 12px 15px;
+    font-size: 12px;
+  }
+}
+
+

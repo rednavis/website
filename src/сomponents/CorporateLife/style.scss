@@ -1,0 +1,117 @@
+@import '../variables.scss';
+
+.life{
+  padding: 80px 0 170px;
+  .container{
+    max-width: 900px;
+  }
+  .sect-title{
+    margin: 0 0 60px;
+  }
+  &-slider{
+    &__container{
+      height: 410px;
+      position: relative;
+      overflow: hidden;
+    }
+    &__img{
+      height: 320px;
+      width: 280px;
+      position: absolute;
+      text-align: center;
+      overflow: hidden;
+      top: 65px;
+      z-index: 1;
+      transition: all 300ms ease;
+      user-select: none;
+      img{
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &::after{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.4);
+        opacity: 1;
+      }
+      &.active{
+        left: 50%;
+        transform: translateX(-50%);
+        width: 360px;
+        height: 410px;
+        top: 0;
+        z-index: 5;
+        box-shadow: 0px 4px 40px #000000;
+        &::after{
+          opacity: 0;
+        }
+      }
+      &.prev{
+        left: 0;
+      }
+      &.prev-hide{
+        transform: translateX(-100%);
+      }
+      &.next{
+        left: 100%;
+        transform: translateX(-100%);
+      }
+      &.next-hide{
+        left: 100%;
+        transform: translateX(0);
+      }
+    }
+    &-dots{
+      display: flex;
+      justify-content: center;
+      margin-top: 60px;
+      &__item{
+        background-color: #494949;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin: 0 6px;
+        transition: all 300ms ease;
+        cursor: pointer;
+        &.active{
+          background-color: $red;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 540px){
+    padding: 30px 0 60px;
+    .sect-title{
+      margin: 0 0 20px;
+    }
+    &-slider{
+      &__container{
+        height: 185px;
+      }
+      &__img{
+        height: 145px;
+        width: 125px;
+        top: 30px;
+        &.active{
+          height: 185px;
+          width: 160px;
+        }
+      }
+      &-dots{
+        margin-top: 20px;
+        &__item{
+          width: 6px;
+          height: 6px;
+          margin: 0 3px;
+        }
+      }
+    }
+  }
+}

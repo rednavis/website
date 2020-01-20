@@ -1,0 +1,93 @@
+@import '../variables.scss';
+
+.tech{
+  padding: 80px 0;
+  .sect-title{
+    margin: 0 0 60px;
+  }
+  &__row{
+    display: flex;
+    margin: 0 -10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__col{
+    padding: 0 10px;
+    max-width: 370px;
+    width: 100%;
+    &:nth-child(n + 4){
+      margin-top: 42px;
+    }
+    &.small{
+      max-width: 240px;
+    }
+    &.big{
+      max-width: 405px;
+    }
+  }
+  &__title{
+    font-size: 24px;
+    padding: 0 0 20px;
+    position: relative;
+    color: $subColor;
+    font-weight: 400;
+    margin: 0 0 20px;
+    &::after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1.5px;
+      width: 62px;
+      background-color: $red;
+    }
+  }
+  &__descr{
+    color: $descrColor;
+    line-height: 22px;
+  }
+  @media screen and (max-width: 1045px){
+    &__row{
+      margin: 0 -20px;
+    }
+    &__col{
+      max-width: 100%;
+      width: 50%;
+      padding: 0 20px;
+      &.big{
+        max-width: 100%;
+      }
+      &.small{
+        max-width: 100%;
+      }
+      &:nth-child(n + 3){
+        margin-top: 42px;
+      }
+    }
+  }
+  @media screen and (max-width: 540px){
+    padding: 30px 0 40px;
+    .sect-title{
+      margin: 0 0 30px;
+    }
+    &__col{
+      width: 100%;
+      &:nth-child(n + 2){
+        margin-top: 20px;
+      }
+    }
+    &__title{
+      font-size: 16px;
+      padding: 0 0 10px;
+      margin: 0 0 10px;
+      &::after{
+        width: 45px;
+        height: 1px;
+      }
+    }
+    &__descr{
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}
